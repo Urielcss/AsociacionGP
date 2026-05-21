@@ -22,6 +22,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   color: #1A1A1A;
   background-color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
