@@ -7,22 +7,22 @@ const testimonios = [
     id: 1,
     texto: "Gracias a la Asociación Gilberto Puebla, hoy mi familia cuenta con un hogar digno y seguro.",
     autor: "— Familia beneficiaria",
-    imagenIzq: "/testimonios/3.png",
-    imagenDer: "/images/web.jpg",
+    imagenIzq: "/testimonios/1-3.png",
+    imagenDer: "/testimonios/1-2.png",
   },
   {
     id: 2,
     texto: "Hoy mi hijo, mi abuelita y yo tenemos un espacio digno para vivir. Gracias por cambiar nuestra vida",
     autor: "— Madre de familia",
-    imagenIzq: "/testimonios/4.png",
-    imagenDer: "/testimonios/infra1.png",
+    imagenIzq: "/testimonios/1.png",
+    imagenDer: "/testimonios/1-4.png",
   },
   {
     id: 3,
     texto: "El proyecto del huerto me ayudó a descubrir mis habilidades y a creer más en mi futuro. Gracias por impulsarnos",
     autor: "— Estudiante beneficiario",
-    imagenIzq: "/testimonios/6.png",
-    imagenDer: "/testimonios/5.png",
+    imagenIzq: "/testimonios/1-7.png",
+    imagenDer: "/testimonios/1-6.png",
   },
 ];
 

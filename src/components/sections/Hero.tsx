@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
+import SplitText from "@/components/ui/SplitText";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -84,6 +85,8 @@ export default function Hero() {
             className="hero-texto flex flex-col gap-6"
             style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
           >
+
+            {/* Título con SplitText animado */}
             <h1 style={{
               fontSize: "clamp(2.4rem, 6vw, 5rem)",
               fontWeight: "800",
@@ -92,9 +95,55 @@ export default function Hero() {
               fontFamily: "var(--font-heading, 'Playfair Display', serif)",
               margin: 0,
             }}>
-              Juntos <br />
-              <span style={{ color: "#4CAF50" }}>transformamos</span> <br />
-              vidas
+              {/* "Juntos" */}
+              <SplitText
+                text="Juntos"
+                tag="span"
+                className="block"
+                delay={40}
+                duration={1.25}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="left"
+              />
+
+              {/* "transformamos" en verde */}
+              <span style={{ color: "#4CAF50" }}>
+                <SplitText
+                  text="transformamos"
+                  tag="span"
+                  className="block"
+                  delay={40}
+                  duration={1.25}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  textAlign="left"
+                />
+              </span>
+
+              {/* "vidas" */}
+              <SplitText
+                text="vidas"
+                tag="span"
+                className="block"
+                delay={40}
+                duration={1.25}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="left"
+              />
             </h1>
 
             <p style={{
@@ -104,8 +153,8 @@ export default function Hero() {
               lineHeight: "1.7",
               margin: 0,
             }}>
-              En Asociación Gilberto México trabajamos para construir comunidades
-              más sanas, educadas y con mejores oportunidades.
+              En Gilberto México trabajamos por el desarrollo comunitario, impulsando
+              iniciativas que fortalecen el bienestar y la calidad de vida de comunidades vulnerables en Puebla y otras regiones de Puebla.
             </p>
 
             <div style={{ marginTop: "0.5rem" }}>

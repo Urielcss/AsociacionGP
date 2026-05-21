@@ -28,9 +28,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Colores según estado */
   const linkColor  = "#ffffff";
   const linkShadow = "none";
+
+  /* Background y blur exactos del header según estado de scroll */
+  const headerBg   = scrolled ? "rgba(27, 74, 46, 0.55)" : "#1B4A2E";
+  const glassBlur  = "blur(16px) saturate(160%)";
 
   return (
     <header
@@ -41,17 +44,15 @@ export default function Navbar() {
         width: "100%",
         zIndex: 50,
         transition: "all 0.35s ease",
-        background: scrolled
-        ? "rgba(27, 74, 46, 0.55)"
-        : "#1B4A2E",
-        backdropFilter:         scrolled ? "blur(16px) saturate(160%)" : "none",
-        WebkitBackdropFilter:   scrolled ? "blur(16px) saturate(160%)" : "none",
+        background: headerBg,
+        backdropFilter:       scrolled ? glassBlur : "none",
+        WebkitBackdropFilter: scrolled ? glassBlur : "none",
         borderBottom: scrolled
-        ? "1px solid rgba(76, 175, 80, 0.25)"
-        : "1px solid transparent",
+          ? "1px solid rgba(76, 175, 80, 0.25)"
+          : "1px solid transparent",
         boxShadow: scrolled
-        ? "0 4px 32px rgba(27, 74, 46, 0.25)"
-        : "none",
+          ? "0 4px 32px rgba(27, 74, 46, 0.25)"
+          : "none",
         padding: scrolled ? "0.5rem 0" : "0.85rem 0",
       }}
     >
@@ -70,9 +71,7 @@ export default function Navbar() {
           href="#inicio"
           style={{ textDecoration: "none", display: "flex", alignItems: "center", flexShrink: 0 }}
         >
-            <img src="/images/blanco.png" alt="Gilberto AC" style={{ height: "70px", width: "auto" }} />
-          
-  
+          <img src="/images/blanco.png" alt="Gilberto AC" style={{ height: "70px", width: "auto" }} />
         </Link>
 
         {/* ── Links desktop (centro) ── */}
@@ -97,7 +96,7 @@ export default function Navbar() {
                   textTransform: "uppercase",
                   textDecoration: "none",
                   textShadow: linkShadow,
-                  transition: "color 0.3s, text-shadow 0.3s, opacity 0.2s",
+                  transition: "opacity 0.2s",
                   opacity: 0.95,
                   whiteSpace: "nowrap",
                 }}
@@ -183,13 +182,16 @@ export default function Navbar() {
 
       {/* ── Menú mobile desplegable ── */}
       {isMobile && (
-        <div style={{
-          maxHeight: menuOpen ? "320px" : "0",
-          overflow: "hidden",
-          transition: "max-height 0.35s ease",
-          background: "#1B4A2E",
-          borderTop: menuOpen ? "1px solid rgba(255,255,255,0.1)" : "none",
-        }}>
+        <div
+          style={{
+            maxHeight: menuOpen ? "320px" : "0",
+            overflow: "hidden",
+            transition: "max-height 0.35s ease",
+            /* transparent: hereda visualmente el background + blur del <header> padre */
+            background: "transparent",
+            borderTop: menuOpen ? "1px solid rgba(255,255,255,0.1)" : "none",
+          }}
+        >
           <nav style={{
             display: "flex",
             flexDirection: "column",
@@ -231,6 +233,7 @@ export default function Navbar() {
                 borderRadius: "999px",
                 textDecoration: "none",
                 marginTop: "1rem",
+                boxShadow: "0 4px 16px rgba(76,175,80,0.3)",
               }}
             >
               🤝 Súmate

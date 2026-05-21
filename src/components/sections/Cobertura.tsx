@@ -1,14 +1,15 @@
 const municipios = [
-  "Caltepecán de Progreso",
-  "Sierra Norte de Puebla",
-  "Tlacoacapan de Ocampo",
-  "Ayoxitánoc de Guerrero",
-  "Huauchinango",
-  "Zacapoaxtla",
-  "Zacatlán de Álvarez",
+  "Ayotoxco de Guerrero",
+  "Cuetzalan del Progreso",
+  "Huehuetla",
+  "Hueytamalco",
+  "Jonotla",
   "Nauzontla",
+  "Tuzumapan de Galeana",
   "Xochitlán de Vicente Suárez",
-  "Zongozotla",
+  "Zacapoaxtla",
+  "Zapotitlán de Méndez",
+  "Zoquiapan",
   "San José Chiapa",
 ];
 
