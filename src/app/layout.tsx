@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Asociación Gilberto A.C. Puebla",
+  title: "Gilberto A.C. Puebla",
   description: "Construimos comunidades más sanas, educadas y con mejores oportunidades.",
 };
 

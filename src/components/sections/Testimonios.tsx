@@ -12,7 +12,7 @@ const testimonios = [
   },
   {
     id: 2,
-    texto: "Hoy mi hijo, mi abuelita y yo tenemos un espacio digno para vivir. Gracias por cambiar nuestra vida",
+    texto: "Gracias Gilberto Puebla, mis hijos recibieron atención con mucha paciencia, cariño y profesionalismo",
     autor: "— Madre de familia",
     imagenIzq: "/testimonios/1.png",
     imagenDer: "/testimonios/1-4.png",

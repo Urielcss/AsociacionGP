@@ -216,7 +216,7 @@ export default function Hero() {
               <video
                 ref={videoRef}
                 src="/images/videohero.mp4"
-                poster="/images/hero/hero-principal.jpg"
+                poster="/images/ninas.jpg"
                 playsInline
                 preload="metadata"
                 onEnded={() => setPlaying(false)}
