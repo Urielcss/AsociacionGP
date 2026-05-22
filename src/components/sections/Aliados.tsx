@@ -3,7 +3,7 @@
 import LogoLoop from "@/components/ui/LogoLoop";
 
 const aliados = [
-  { src: "/aliados/aliados-09.png",  alt: "Audi" },
+  { src: "/aliados/audiag.png",  alt: "Audi" },
   { src: "/aliados/aliados-08.png",  alt: "Mujeres Líderes de Hoy" },
   { src: "/aliados/aliados-05.png",  alt: "Universidad Madero UMAD" },
   { src: "/aliados/aliados-07.png",  alt: "UNAM" },

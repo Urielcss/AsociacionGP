@@ -19,7 +19,7 @@ const programas = [
     titulo: "Infraestructura",
     descripcion: [
       "Este programa tiene el objetivo de mejorar la calidad de vida de familias en situación de vulnerabilidad, atendiendo problemáticas como el hacinamiento y condiciones de salud. El programa otorga viviendas de 45 m², promoviendo entornos dignos y seguros que contribuyen al bienestar social.",
-      "Este esfuerzo se realiza en colaboración con la Universidad Anáhuac Puebla y Construyendo AC. A la fecha se han entregado 51 casas, impactando la vida de 204 personas de manera indirecta en San Pedro Atlixco y San Miguel Tzinacapan, Puebla, México.",
+      "Este esfuerzo se realiza en colaboración con la Universidad Anáhuac Puebla y Construyendo AC. A la fecha se han entregado 51 casas, impactando la vida de 204 personas de manera directa en San Pedro Atlixco y San Miguel Tzinacapan, Puebla, México.",
     ],
     imagenes: [
       { src: "/images/infra1.png", alt: "Entrega de vivienda" },
@@ -32,7 +32,7 @@ const programas = [
     icono: "🎓",
     titulo: "Educación",
     descripcion: [
-      "Desde el año 2023, en alianza con Audi AG, se implementa el programa \"Aprendiendo en Comunidad\" en tres bachilleratos de San José Chiapa, beneficiando a 987 estudiantes, 40 docentes y 291 padres de familia.",
+      "Desde el año 2023, en alianza con Audi AG y Terre des Hommes, se implementa el programa \"Aprendiendo en Comunidad\" en tres bachilleratos de San José Chiapa, beneficiando a 987 estudiantes, 40 docentes y 291 padres de familia.",
       "El programa se ejecuta en alianza con Enseña por México con el objetivo de impulsar la permanencia y continuidad educativa mediante el desarrollo de competencias clave para reducir el rezago y la deserción escolar, así como para fortalecer el acceso a la educación superior y al empleo formal.",
     ],
     imagenes: [

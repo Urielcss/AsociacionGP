@@ -37,7 +37,7 @@ export default function Sumate() {
           {/* Texto */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              <span style={{ fontSize: "1.5rem" }}>🤝</span>
+              <span style={{ fontSize: "1.5rem" }}></span>
               <p style={{
                 fontSize: "0.7rem",
                 fontWeight: "700",
@@ -46,7 +46,7 @@ export default function Sumate() {
                 textTransform: "uppercase",
                 margin: 0,
               }}>
-                Súmate
+              
               </p>
             </div>
 
@@ -58,12 +58,12 @@ export default function Sumate() {
               lineHeight: "1.15",
               margin: 0,
             }}>
-              Sé parte del cambio
+              Tu Apoyo
             </h2>
 
             <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "1.05rem", lineHeight: "1.75", maxWidth: "420px", margin: 0 }}>
-              Tu apoyo puede <strong style={{ color: "#ffffff" }}>transformar vidas</strong> y construir
-              un futuro con más oportunidades para todos.
+              abre caminos, <strong style={{ color: "#ffffff" }}> crea oportunidades y transforma vidas.</strong>
+              
             </p>
 
             <div>

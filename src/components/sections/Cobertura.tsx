@@ -109,7 +109,7 @@ export default function Cobertura() {
             }}
           >
             <img
-              src="/images/municipios.png"
+              src="/images/pue2.png"
               alt="Mapa de municipios"
               style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
             />

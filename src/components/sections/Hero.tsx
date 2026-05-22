@@ -153,8 +153,8 @@ export default function Hero() {
               lineHeight: "1.7",
               margin: 0,
             }}>
-              En Gilberto México trabajamos por el desarrollo comunitario, impulsando
-              iniciativas que fortalecen el bienestar y la calidad de vida de comunidades vulnerables en Puebla y otras regiones de Puebla.
+              En Gilberto Puebla trabajamos por el desarrollo comunitario, impulsando
+              iniciativas que fortalecen el bienestar y la calidad de vida de comunidades vulnerables en Puebla.
             </p>
 
             <div style={{ marginTop: "0.5rem" }}>

@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div style={{ paddingTop: "2rem", textAlign: "center" }}>
           <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem" }}>
-            © By DevStack Studio.
+            © Powered DevStack Studio.
           </p>
         </div>
       </div>

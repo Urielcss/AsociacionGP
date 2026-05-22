@@ -19,7 +19,7 @@ const testimonios = [
   },
   {
     id: 3,
-    texto: "El proyecto del huerto me ayudó a descubrir mis habilidades y a creer más en mi futuro. Gracias por impulsarnos",
+    texto: "El programa educativo con Gilberto Puebla me ayudó a entrenarme y poder ingresar a la Universidad.",
     autor: "— Estudiante beneficiario",
     imagenIzq: "/testimonios/1-7.png",
     imagenDer: "/testimonios/1-6.png",
