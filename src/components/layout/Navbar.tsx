@@ -13,7 +13,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  // null = SSR / antes del primer useEffect, true/false = ya detectado en cliente
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -28,12 +29,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkColor  = "#ffffff";
-  const linkShadow = "none";
-
-  /* Background y blur exactos del header según estado de scroll */
-  const headerBg   = scrolled ? "rgba(27, 74, 46, 0.55)" : "#1B4A2E";
-  const glassBlur  = "blur(16px) saturate(160%)";
+  const linkColor = "#ffffff";
+  const glassBlur = "blur(16px) saturate(160%)";
+  const headerBg  = scrolled ? "rgba(27, 74, 46, 0.55)" : "#1B4A2E";
 
   return (
     <header
@@ -74,77 +72,14 @@ export default function Navbar() {
           <img src="/images/blanco.png" alt="Gilberto AC" style={{ height: "70px", width: "auto" }} />
         </Link>
 
-        {/* ── Links desktop (centro) ── */}
-        {!isMobile && (
-          <nav style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "2.5rem",
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-          }}>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  color: linkColor,
-                  fontWeight: "700",
-                  fontSize: "0.78rem",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  textShadow: linkShadow,
-                  transition: "opacity 0.2s",
-                  opacity: 0.95,
-                  whiteSpace: "nowrap",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.95")}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        )}
+        {/*
+          isMobile === null → no renderiza nada (evita el flash de hidratación SSR)
+          isMobile === false → desktop: links centrados + CTA
+          isMobile === true  → mobile: solo hamburger
+        */}
+        {isMobile === null ? null : isMobile ? (
 
-        {/* ── CTA desktop ── */}
-        {!isMobile && (
-          <Link
-            href="https://www.paypal.com/ncp/payment/ZKCR8Y5S2T5BA"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "#4CAF50",
-              color: "#ffffff",
-              fontWeight: "700",
-              fontSize: "0.78rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              padding: "10px 22px",
-              borderRadius: "999px",
-              textDecoration: "none",
-              boxShadow: "0 4px 16px rgba(76,175,80,0.4)",
-              transition: "background 0.2s, transform 0.2s",
-              flexShrink: 0,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#2E7D4F";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#4CAF50";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            🤝 Súmate
-          </Link>
-        )}
-
-        {/* ── Hamburger SOLO mobile ── */}
-        {isMobile && (
+          /* ── MÓVIL: hamburger ── */
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Abrir menú"
@@ -177,6 +112,73 @@ export default function Navbar() {
               transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
             }} />
           </button>
+
+        ) : (
+
+          /* ── DESKTOP: links + CTA ── */
+          <>
+            <nav style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "2.5rem",
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={{
+                    color: linkColor,
+                    fontWeight: "700",
+                    fontSize: "0.78rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    transition: "opacity 0.2s",
+                    opacity: 0.95,
+                    whiteSpace: "nowrap",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.95")}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <Link
+              href="https://www.paypal.com/ncp/payment/ZKCR8Y5S2T5BA"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                background: "#4CAF50",
+                color: "#ffffff",
+                fontWeight: "700",
+                fontSize: "0.78rem",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                padding: "10px 22px",
+                borderRadius: "999px",
+                textDecoration: "none",
+                boxShadow: "0 4px 16px rgba(76,175,80,0.4)",
+                transition: "background 0.2s, transform 0.2s",
+                flexShrink: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#2E7D4F";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "#4CAF50";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              🤝 Súmate
+            </Link>
+          </>
         )}
       </div>
 
@@ -187,7 +189,6 @@ export default function Navbar() {
             maxHeight: menuOpen ? "320px" : "0",
             overflow: "hidden",
             transition: "max-height 0.35s ease",
-            /* transparent: hereda visualmente el background + blur del <header> padre */
             background: "transparent",
             borderTop: menuOpen ? "1px solid rgba(255,255,255,0.1)" : "none",
           }}

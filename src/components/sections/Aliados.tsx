@@ -42,14 +42,19 @@ export default function Aliados() {
           </h2>
         </div>
 
-        {/* Carrusel de logos */}
-        <div style={{ position: "relative" }}>
+        {/* Altura reservada antes de que carguen los logos */}
+        <div style={{
+          position: "relative",
+          minHeight: "170px",
+          display: "flex",
+          alignItems: "center",
+        }}>
           <LogoLoop
             logos={aliados}
             speed={80}
             direction="left"
             logoHeight={150}
-            gap={0}               
+            gap={0}
             pauseOnHover
             fadeOut
             fadeOutColor="#F7F7F7"
@@ -59,16 +64,20 @@ export default function Aliados() {
               const img = item as { src: string; alt?: string };
               return (
                 <div style={{
-                  padding: "0 60px",          // ← aquí controlas el espacio entre logos
+                  padding: "0 60px",
                   display: "flex",
                   alignItems: "center",
+                  minWidth: "160px",
                 }}>
                   <img
                     src={img.src}
                     alt={img.alt ?? ""}
+                    loading="eager"
+                    fetchPriority="high"
                     style={{
-                      height: "170px",         // ← misma altura que logoHeight
+                      height: "170px",
                       width: "auto",
+                      aspectRatio: "auto",
                       objectFit: "contain",
                       display: "block",
                     }}
